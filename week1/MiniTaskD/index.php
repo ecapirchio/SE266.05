@@ -10,4 +10,4 @@ $person['name'] = 'Jeffrey';
 
 unset($person['age']);
 
-require 'index.view.php';
+require 'indexView.php';
