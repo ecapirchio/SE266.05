@@ -19,7 +19,9 @@
     
     <ul>
         <?php foreach ($tasks as $key => $feature) : ?>
+             <!--Start of HTML list item for each task feature-->
             <li><strong><?= $key; ?></strong><?= $feature; ?></li>
+             <!--Start of HTML list item for each task feature-->
         
         <?php endforeach; ?>
     </ul>

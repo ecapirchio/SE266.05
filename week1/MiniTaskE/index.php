@@ -1,5 +1,6 @@
 <?php
 
+//Create $task array
 $task = [
     'title' => 'Finish homework', //Task title
     'due'   => 'today', //Due date
