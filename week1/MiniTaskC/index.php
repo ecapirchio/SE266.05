@@ -19,7 +19,9 @@
 $animals = [
     'Cat',
     'Dog',
-    'Cow'
+    'Cow',
+    'Horse',
+    'Goat'
 ];
 
 //Start a PHP foreach loop to iterate through the $animals array
