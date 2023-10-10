@@ -11,3 +11,4 @@
 <li><a href="../week1/MiniTaskE/index.php">Week 1 - Mini Task E</a></li>
 <li><a href="../week1/MiniTaskF/index.php">Week 1 - Mini Task F</a></li>
 <li><a href="../week1/MiniTaskG/index.php">Week 1 - Mini Task G</a></li>
+</ul>
