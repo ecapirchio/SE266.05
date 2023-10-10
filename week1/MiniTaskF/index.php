@@ -10,8 +10,8 @@ function dd($data) {
 $task = [
     'title' => 'Finish homework', //Task title
     'due'   => 'today', //Due date
-    'assigned_to' => 'Jeffrey', //Person assigned to the task
-    'completed' => false //Task completion status
+    'assigned_to' => 'Emma', //Person assigned to the task
+    'completed' => true //Task completion status
 ];
 
 ?>
@@ -29,7 +29,7 @@ $task = [
 <ul>
     <!--Display the task title-->
     <li>
-        <strong>Name: </strong> <?= $task['title']; ?>
+        <strong>Task: </strong> <?= $task['title']; ?>
     </li>
 
     <!--Display the due date for the task-->

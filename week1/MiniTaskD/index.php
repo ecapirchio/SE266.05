@@ -6,30 +6,27 @@
 </head>
 <body>
 
-<?php
+    <?php
 
-//Define an array named $person with information about a person
-$person = [
-    'age' => 31,
-    'hair' => 'brown',
-    'career' => 'web developer'
-];
+    $tasks = [
+        'title:' => ' Finish homework', //Task title
+        'due:'   => ' today', //Due date
+        'assigned_to:' => ' Emma', //Person assigned to the task
+        'completed:' => ' yes' //Task completion status
+    ];
 
-//Add a 'name' key to the $person array and set it to 'Jeffrey'
-$person['name'] = 'Jeffrey';
-
-//Remove the 'age' key from the $person array
-unset($person['age']);
-
-//Start a PHP foreach loop to iterate through the $person array
-foreach ($person as $key => $feature) : ?>
-    <!--Start of HTML unordered list for each person's feature-->
+    //Start a PHP foreach loop to iterate through the $animals array
+    foreach ($tasks as $task) : ?>
+        <!--Start of HTML list item for each animal-->
+        <li><?= $task; ?></li>
+        <!--End of HTML list item-->
+    <?php endforeach; //End of the foreach loop ?>
     <ul>
-        <!--List item displaying the feature key in bold and its value-->
-        <li><strong><?= $key; ?></strong> <?= $feature; ?></li>
+        <?php foreach ($tasks as $key => $feature) : ?>
+            <li><strong><?= $key; ?></strong><?= $feature; ?></li>
+        
+        <?php endforeach; ?>
     </ul>
-    <!--End of HTML unordered list-->
-<?php endforeach; //End of the foreach loop ?>
 
 </body>
 </html>
