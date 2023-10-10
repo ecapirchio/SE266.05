@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>Mini Task C</title>
     <style>
+        /* CSS style for the header element */
         header {
-            background: #e3e3e3;
-            padding: 2em;
-            text-align: center;
+            background: #e3e3e3; /* Background color */
+            padding: 2em; /* Padding around the header content */
+            text-align: center; /* Center-align the text */
         }
     </style>
 </head>
@@ -21,9 +22,12 @@ $animals = [
     'Cow'
 ];
 
+// Start a PHP foreach loop to iterate through the $animals array
 foreach ($animals as $animal) : ?>
+    <!-- Start of HTML list item for each animal -->
     <li><?= $animal; ?></li>
-<?php endforeach; ?>
+    <!-- End of HTML list item -->
+<?php endforeach; // End of the foreach loop ?>
 
 </body>
 </html>
