@@ -21,14 +21,16 @@
         <label for="birth_date">Birth Date:</label>
         <input type="date" name="birth_date" required><br><br>
         
-        <label for="height">Height (in ft/in):</label>
-        <input type="number" name="height" required><br><br>
+        <label for="height_ft">Height (ft):</label>
+        <input type="number" name="height_ft" required><br><br>
         
-        <label for="weight">Weight (in lbs):</label>
-        <input type="number" name="weight" required><br><br>
+        <label for="height_inch">Height (in):</label>
+        <input type="number" name="height_inch" required><br><br>
+        
+        <label for="weight_lbs">Weight (lbs):</label>
+        <input type="number" name="weight_lbs" required><br><br>
         
         <input type="submit" value="Submit">
     </form>
-
 </body>
 </html>
