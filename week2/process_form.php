@@ -55,11 +55,11 @@
         $errors = array();
 
         if (empty($first_name)) {
-            $errors[] = "First name cannot be empty.";
+            $errors[] = "First name can't be empty.";
         }
 
         if (empty($last_name)) {
-            $errors[] = "Last name cannot be empty.";
+            $errors[] = "Last name can't be empty.";
         }
 
         if (empty($married)) {
