@@ -8,7 +8,7 @@
     }
 
     function isDate($dt) {
-        $date_arr = explode('-', $dt);
+        $date_arr = explode('-', $dob);
         return checkdate($date_arr[1], $date_arr[2], $date_arr[0]);
     }
 
