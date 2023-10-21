@@ -28,6 +28,7 @@ abstract class Account
 		if ($amount > 0) {
 			$this->balance += $amount;
 			return true;
+		}
 	} // end deposit
 
 	// This is an abstract method. 
