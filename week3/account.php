@@ -45,7 +45,7 @@ abstract class Account
 	public function getBalance() 
 	{
 		// write code here
-		return $this->balance;
+		return $this->balance; 
 	} // end getBalance
 
 	public function getAccountId() 
