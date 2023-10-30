@@ -2,8 +2,19 @@
 require_once "checking.php"; // Include the CheckingAccount class
 require_once "savings.php"; // Include the SavingsAccount class
 
-$checking = new CheckingAccount('C123', 0, '12-20-2019'); // Set the initial balance to $0
-$savings = new SavingsAccount('S123', 0, '03-20-2020'); // Set the initial balance to $0
+
+
+if (isset($_POST['checkingBalance'])) {
+    $checkingBalance = filter_input(INPUT_POST, 'checkingBalance');
+    $savingsBalance = filter_input(INPUT_POST, 'savingsBalance');
+}
+else{
+    $checkingBalance = 0;
+    $savingsBalance = 0;
+}
+
+$checking = new CheckingAccount('C123', $checkingBalance, '12-20-2019'); // Set the initial balance to $0
+$savings = new SavingsAccount('S123', $savingsBalance, '03-20-2020'); // Set the initial balance to $0
 
 $successMessage = $errorMessage = "";
 
@@ -85,6 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <!-- Display Checking Account Information -->
                 <?php echo $checking->getAccountDetails(); ?>
                 <div class="accountInner">
+                    <input type="hidden" name="checkingBalance" value="<?= $checking -> getBalance();?>"/>
                     <input type="text" name="checkingWithdrawAmount" value="" />
                     <input type="submit" name="withdrawChecking" value="Withdraw" />
                 </div>
@@ -97,6 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <!-- Display Savings Account Information -->
                 <?php echo $savings->getAccountDetails(); ?>
                 <div class="accountInner">
+                    <input type="hidden" name="savingsBalance" value="<?= $savings -> getBalance();?>"/>
                     <input type="text" name="savingsWithdrawAmount" value="" />
                     <input type="submit" name="withdrawSavings" value="Withdraw" />
                 </div>

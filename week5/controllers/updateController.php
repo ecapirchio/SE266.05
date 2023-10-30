@@ -1,10 +1,10 @@
 <?php
  
   // This code runs everything the page loads
-  require_once "models/TeamDB.php";
+  require_once "../model/TeamDB.php";
 
   // Set up configuration file and create database
-  require_once "models/dbpointer.php";  
+  require_once "../model/dbpointer.php";  
 
   try 
   {

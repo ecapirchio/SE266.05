@@ -1,10 +1,10 @@
 <?php
     
-    require_once "./model/TeamDB.php";
+    require_once "../model/TeamDB.php";
     require_once "controllers/functions.php";
 
     // Set up configuration file and create database
-    require_once "./model/dbpointer.php";  
+    require_once "../model/dbpointer.php";  
 
     try 
     {
