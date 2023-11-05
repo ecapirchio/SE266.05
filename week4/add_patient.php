@@ -5,8 +5,8 @@ $ini = parse_ini_file('config.ini'); // Assuming you have a configuration file
 try {
     $db = new PDO(
         "mysql:host=cs.neit.edu" . $ini['servername'] . ";port=" . $ini['port'] . ";dbname=" . $ini['dbname'],
-        $ini['username'],
-        $ini['password']
+        $ini['ercapirchio@cs.neit.edu'],
+        $ini['!Spiderman37195']
     );
     // Set the PDO error mode to exception
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
