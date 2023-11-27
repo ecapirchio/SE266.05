@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br>
 
-        <label for="passkey">passkey:</label>
+        <label for="passkey">Passkey:</label>
         <input type="passkey" id="passkey" name="passkey" required><br>
 
         <input type="submit" value="Login">
