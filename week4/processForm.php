@@ -1,5 +1,7 @@
 <?php
 
+    include (__DIR__ . '/addPatient.php');
+
     function age($bdate) {
         $date = new DateTime($bdate);
         $now = new DateTime();

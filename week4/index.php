@@ -5,7 +5,7 @@
 </head>
 <body>
     <h2>Patient Intake Form</h2>
-    <form method="post" action="process_form.php">
+    <form method="post" action="processForm.php">
         <label for="first_name">First Name:</label>
         <input type="text" name="first_name" required><br><br>
         

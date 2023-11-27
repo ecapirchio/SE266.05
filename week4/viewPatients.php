@@ -37,6 +37,6 @@
         }
         ?>
     </table>
-    <a href="patient_details.php">Add Patient</a>
+    <a href="processForm.php">Add Patient</a>
 </body>
 </html>

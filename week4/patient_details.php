@@ -18,14 +18,8 @@
         <label for="birth_date">Birth Date:</label>
         <input type="date" name="birth_date" id="birth_date" required><br>
 
-        <label for="height">Height (ft):</label>
-        <input type="number" name="height" id="height" required><br>
-
-        <label for="weight">Weight (lbs):</label>
-        <input type="number" name="weight" id="weight" required><br>
-
         <input type="submit" value="Add Patient">
     </form>
-    <a href="view_patients.php">Cancel</a>
+    <a href="viewPatients.php">Cancel</a>
 </body>
 </html>

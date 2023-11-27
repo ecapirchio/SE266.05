@@ -40,25 +40,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: view_patients.php");
     exit;
 }
-
-// Define a function to calculate BMI
-function calculateBMI($height, $weight) {
-    // Implement the BMI calculation formula here
-    // BMI = weight (kg) / (height (m) * height (m))
-    return ($weight / (($height * 0.3048) * ($height * 0.3048))); // Convert height from feet to meters
-}
-
-// Define a function to classify BMI
-function classifyBMI($bmi) {
-    // Implement your BMI classification logic here
-    // Example classification ranges:
-    if ($bmi < 18.5) {
-        return "Underweight";
-    } elseif ($bmi < 24.9) {
-        return "Normal Weight";
-    } elseif ($bmi < 29.9) {
-        return "Overweight";
-    } else {
-        return "Obese";
-    }
-}
