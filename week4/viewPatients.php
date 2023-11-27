@@ -43,6 +43,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <td><?php echo $p['last_name']; ?></td>
             <td><?php echo $p['married']; ?></td>
             <td><?php echo $p['birth_date']; ?></td>
+
+            <td><a href="edit_patients.php?id=<?php echo $p['id']; ?>">Edit</a></td>
+            <td>
+                <form method="post" action="viewPatients.php">
+                    <input type="hidden" name="delete" value="<?php echo $p['id'];?>"
+                    <input type="submit" value="Delete" />
+                </form>
+            </td>
         </tr>
         <?php endforeach; ?>
     </tbody>
