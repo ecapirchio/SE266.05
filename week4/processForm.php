@@ -1,6 +1,6 @@
 <?php
 
-    include (__DIR__ . '/addPatient.php');
+    include (__DIR__ . '/patientDetails.php');
 
     function age($bdate) {
         $date = new DateTime($bdate);

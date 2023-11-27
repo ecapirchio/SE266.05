@@ -8,7 +8,7 @@
         $stmt = $db->prepare("SELECT id, first_name, last_name, married, birth_date FROM patients ORDER BY last_name");
 
         if ( $stmt->execute() && $stmt->rowcount() > 0 ) {
-            $results = $stmt->fetchALL(PDO::FETCH_ASSOC);
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         return($results);
     }
@@ -22,6 +22,8 @@
             ":married" => $m,
             ":birth_date" => $b
         );
+
+        $results = '';
         if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
             $results = 'Data Added';
         }

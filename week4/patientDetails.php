@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Patient Details</h1>
-    <form action="addPatient.php" method="post">
+    <form action="processForm.php" method="post">
         <label for="first_name">First Name:</label>
         <input type="text" name="first_name" required><br><br>
         
@@ -23,7 +23,7 @@
         
         <input type="submit" value="Submit">
     </form>
-    <a href="viewPatients.php">Cancel</a>
+    <a href="viewPatients1.php">Cancel</a>
 
     <?php
     $file = basename($_SERVER['PHP_SELF']);

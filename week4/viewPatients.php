@@ -27,12 +27,7 @@
             echo "<td>{$patient['first_name']}</td>";
             echo "<td>{$patient['last_name']}</td>";
             echo "<td>{$patient['marital_status']}</td>";
-            echo "<td>{$patient['birth_date']}</td>";
-            echo "<td>{$patient['height']}</td>";
-            echo "<td>{$patient['weight']}</td>";
-            echo "<td>{$patient['age']}</td>";
-            echo "<td>{$patient['bmi']}</td>";
-            echo "<td>{$patient['bmi_classification']}</td>";
+            echo "<td>{$patient['birth_date']}</td>">
             echo "</tr>";
         }
         ?>
