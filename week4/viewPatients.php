@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <td><a href="edit_patients.php?id=<?php echo $p['id']; ?>">Edit</a></td>
             <td>
                 <form method="post" action="viewPatients.php">
-                    <input type="hidden" name="delete" value="<?php echo $p['id'];?>"
+                    <input type="hidden" name="delete" value="<?php echo $p['id']; ?>" />
                     <input type="submit" value="Delete" />
                 </form>
             </td>
