@@ -38,7 +38,7 @@
             ":id" => $id
         );
         if($stmt->execute($binds) && $stmt->rowCount() > 0) {
-lnamefna            $results = 'Data Deleted';
+            $results = 'Data Deleted';
         }
         return ($results);
     }
