@@ -1,6 +1,6 @@
 <?php
 
-    include(__DIR__ . '/db1.php');
+    include(__DIR__ . '/db.php');
 
     function getPatients () {
         global $db;

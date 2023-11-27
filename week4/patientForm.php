@@ -36,7 +36,7 @@ if (isset($_POST['submitBtn'])) {
     $result = addPatient($first_name, $last_name, $married, $birth_date);
     
     if ($result === 'Data Added') {
-        header("Location: viewPatients1.php");
+        header("Location: viewPatients.php");
         exit;
     }
 }
@@ -69,7 +69,7 @@ if (isset($_POST['submitBtn'])) {
         <input type="submit" name="submitBtn"/> <!-- Submit Button -->
     </form>
     <br><br>
-    <a href="viewPatients1.php">View Patients</a>
+    <a href="viewPatients.php">View Patients</a>
 </body>
 </html>
 ?>
