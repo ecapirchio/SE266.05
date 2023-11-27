@@ -13,7 +13,7 @@
 <li><a href="../week1/MiniTaskG/index.php">Week 1 - Mini Task G</a></li>
 <li><a href="../week2/index.php">Week 2</a></li>
 <li><a href="../week3/atm_starter.php">Week 3</a></li>
-<li><a href="../week4/index.php">Week 4</a></li>
+<li><a href="../week4/patientDetails.php">Week 4</a></li>
 <li><a href="../week5/teams/index.php">Week 5</a></li>
 <li><a href="../week6/index.php">Week 6</a></li>
 <li><a href="../week7/index.php">Week 7</a></li>

@@ -21,5 +21,11 @@
         <input type="submit" value="Add Patient">
     </form>
     <a href="viewPatients.php">Cancel</a>
+
+    <?php
+    $file = basename($_SERVER['PHP_SELF']);
+    $mod_date=date("F d Y h:i:s A", filemtime($file));
+    echo "<br>File last updated $mod_date";
+    ?>
 </body>
 </html>
