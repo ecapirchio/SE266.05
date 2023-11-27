@@ -31,10 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php if(isset($error_message)) { echo "<p>$error_message</p>"; } ?>
     <form method="post" action="">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
+        <input type="text" id="username" name="username" required><br><br>
 
         <label for="passkey">Passkey:</label>
-        <input type="passkey" id="passkey" name="passkey" required><br>
+        <input type="passkey" id="passkey" name="passkey" required><br><br>
 
         <input type="submit" value="Login">
     </form>
