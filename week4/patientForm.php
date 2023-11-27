@@ -63,10 +63,7 @@
         <input type="text" name="last_name" required>
         <br><br>
         <label for="married">Married:</label>
-        <select name="married" required>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-        </select><br><br>
+        <input type="checkbox" name="married" >
         <br><br>
         <label for="birth_date">Birth Date:</label>
         <input type="date" name="birth_date" required>
