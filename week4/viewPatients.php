@@ -28,10 +28,10 @@ $patients = getPatients();
         ?>
         <tr>
             <td><?php echo $p['id']; ?></td>
-            <td><?php echo $p['fname']; ?></td>
-            <td><?php echo $p['lname']; ?></td>
+            <td><?php echo $p['first_name']; ?></td>
+            <td><?php echo $p['last_name']; ?></td>
             <td><?php echo $p['married']; ?></td>
-            <td><?php echo $p['bday']; ?></td>
+            <td><?php echo $p['birth_date']; ?></td>
         </tr>
         <?php endforeach; ?>
     </tbody>

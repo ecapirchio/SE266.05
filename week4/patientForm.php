@@ -2,8 +2,8 @@
 
     include (__DIR__ . '/model_patients.php');
 
-    function age($bday) { #function to convert the date of birth to an actual age 
-        $date = new DateTime($bday);
+    function age($birth_date) { #function to convert the date of birth to an actual age 
+        $date = new DateTime($birth_date);
         $now = new DateTime();
         $interval = $now->diff($date);
         return $interval->y;
@@ -14,8 +14,8 @@
     $now = new DateTime;
     if (isset($_POST['submitBtn'])){ #if statement to check if areas are set correctly
 
-        $fname = filter_input(INPUT_POST,'fname');
-        $lname = filter_input(INPUT_POST,'lname');
+        $first_name = filter_input(INPUT_POST,'first_name');
+        $last_name = filter_input(INPUT_POST,'last_name');
         $married = filter_input(INPUT_POST,'married');
         if ($married == true){ 
             $married = 1;
@@ -23,12 +23,12 @@
         if ($married == false){
             $married = 0;
         }
-        $bday = filter_input(INPUT_POST,'bday'); #All validation for patient
-        if (age($bday) > 120){
+        $birth_date = filter_input(INPUT_POST,'birth_date'); #All validation for patient
+        if (age($birth_date) > 120){
             $error += 1;
             $errormsg .= "Age cannot be more than 119\n";
         }
-        if ($bday > $now){
+        if ($birth_date > $now){
             $error += 1;
             $errormsg .= "Cannot enter a future date\n";
         }
@@ -39,7 +39,7 @@
             header("Location: viewPatients.php");
         }
         if(isset($_POST['submitBtn']) && ($error == 0)){
-            addPatient($fname, $lname, $married, $bday);
+            addPatient($first_name, $last_name, $married, $birth_date);
         }
     }
 
@@ -56,17 +56,17 @@
 </head>
 <body>
     <form action="index.php" method="post"> <!-- All inputs for patient -->
-        <label for="fname">First Name:</label>
-        <input type="text" name="fname" required >
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" required >
         <br><br>
-        <label for="lname">Last Name:</label>
-        <input type="text" name="lname" required>
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" required>
         <br><br>
         <label for="married">Married:</label>
         <input type="checkbox" name="married" >
         <br><br>
-        <label for="bday">Birth Date:</label>
-        <input type="date" name="bday" required>
+        <label for="birth_date">Birth Date:</label>
+        <input type="date" name="birth_date" required>
         <br><br>
         <input type="submit" name="submitBtn"/> <!-- Submit Button -->
         </form>

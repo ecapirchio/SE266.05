@@ -5,7 +5,7 @@
     function getPatients () {
         global $db;
         $results = [];
-        $stmt = $db->prepare("SELECT id, fname, lname, married, bday FROM patients ORDER BY lname");
+        $stmt = $db->prepare("SELECT id, first_name, last_name, married, birth_date FROM patients ORDER BY last_name");
 
         if ( $stmt->execute() && $stmt->rowcount() > 0 ) {
             $results = $stmt->fetchALL(PDO::FETCH_ASSOC);
@@ -15,12 +15,12 @@
 
     function addPatient ($f, $l, $m, $b) {
         global $db;
-        $stmt = $db->prepare("INSERT INTO patients SET fname = :fname, lname = :lname, married = :married, bday = :bday");
+        $stmt = $db->prepare("INSERT INTO patients SET first_name = :first_name, last_name = :last_name, married = :married, birth_date = :birth_date");
         $binds = array(
-            ":fname" => $f,
-            ":lname" => $l,
+            ":first_name" => $f,
+            ":last_name" => $l,
             ":married" => $m,
-            ":bday" => $b
+            ":birth_date" => $b
         );
         if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
             $results = 'Data Added';
