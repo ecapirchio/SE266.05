@@ -1,6 +1,17 @@
 <?php
 include (__DIR__ . '/model_patients.php');
-$patients = getPatients();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['delete'])) {
+        $id = $_POST['delete'];
+        $result = deletePatient($id);
+
+        if ($result === 'Data Deleted') {
+            header("Location: viewPatients.php");
+            exit();
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
