@@ -1,33 +1,32 @@
 <?php
-// model_patients.php
 
-include(__DIR__ . '/db1.php');
+    include(__DIR__ . '/db1.php');
 
-function getPatients() {
-    global $db;
-    $results = [];
-    $stmt = $db->prepare("SELECT id, first_name, last_name, married, birth_date FROM patients ORDER BY last_name");
+    function getPatients () {
+        global $db;
+        $results = [];
+        $stmt = $db->prepare("SELECT id, fname, lname, married, bday FROM patients ORDER BY lname");
 
-    if ($stmt->execute() && $stmt->rowCount() > 0) {
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ( $stmt->execute() && $stmt->rowcount() > 0 ) {
+            $results = $stmt->fetchALL(PDO::FETCH_ASSOC);
+        }
+        return($results);
     }
-    return $results;
-}
 
-function addPatient($f, $l, $m, $b) {
-    global $db;
-    $stmt = $db->prepare("INSERT INTO patients SET first_name = :first_name, last_name = :last_name, married = :married, birth_date = :birth_date");
-    $binds = array(
-        ":first_name" => $f,
-        ":last_name" => $l,
-        ":married" => $m,
-        ":birth_date" => $b
-    );
-    if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
-        return 'Data Added';
+    function addPatient ($f, $l, $m, $b) {
+        global $db;
+        $stmt = $db->prepare("INSERT INTO patients SET fname = :fname, lname = :lname, married = :married, bday = :bday");
+        $binds = array(
+            ":fname" => $f,
+            ":lname" => $l,
+            ":married" => $m,
+            ":bday" => $b
+        );
+        if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+            $results = 'Data Added';
+        }
+        return ($results);
     }
-    return false;
-}
+    $patients = getPatients();
 
-$patients = getPatients();
 ?>
