@@ -29,36 +29,4 @@
     }
     $patients = getPatients();
 
-    function deletePatient ($id){
-        global $db;
-        $results = [];
-        $sql = "DELETE FROM patients WHERE id = :id";
-        $stmt = $db->prepare("DELETE FROM patients WHERE id = :id");
-        $binds = array(
-            ":id" => $id
-        );
-        if($stmt->execute($binds) && $stmt->rowCount() > 0) {
-            $results = 'Data Deleted';
-        }
-        return ($results);
-    }
-
-    function updatePatient ($id, $first_name, $last_name, $married, $birth_date){
-        global $db;
-        $results = [];
-        $sql = "UPDATE patients SET first_name = :f, last_name = :l, married = :m, birth_date= :b WHERE id = :id";
-        $stmt = $db->prepare("UPDATE patients SET first_name = :f, last_name = :l, married = :m, birth_date= :b WHERE id = :id");
-        $binds = array(
-            ":id" => $id,
-            ":f" => $first_name,
-            ":l" => $last_name,
-            ":m" => $married,
-            ":b" => $birth_date
-        );
-        if($stmt->execute($binds) && $stmt->rowCount() > 0) {
-            $results = 'Data Updated';
-        }
-        return ($results);
-    }
-
 ?>
