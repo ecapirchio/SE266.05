@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Patient Details</h1>
-    <form action="add_patient.php" method="post">
+    <form action="addPatient.php" method="post">
         <label for="first_name">First Name:</label>
         <input type="text" name="first_name" id="first_name" required><br>
 
