@@ -65,15 +65,33 @@
     {
         global $db;
         $results = [];
+        $binds = array();
 
         // Query the database for patients matching the search term
+        $sql = "SELECT id, first_name, last_name, married, birth_date FROM patients WHERE 
+        first_name LIKE :searchTerm 
+        OR last_name LIKE :searchTerm 
+        OR married LIKE :searchTerm";
         $stmt = $db->prepare("SELECT id, first_name, last_name, married, birth_date FROM patients WHERE 
                             first_name LIKE :searchTerm 
                             OR last_name LIKE :searchTerm 
                             OR married LIKE :searchTerm");
-        $binds = array(
-            ":searchTerm" => "%$searchTerm%"
-        );
+        
+        $sql =  "SELECT * FROM  patients WHERE 0=0";
+        if ($searchTerm != "") {
+            $sql .= " AND first_name LIKE :first_name";
+            $binds['first_name'] = '%'.$searchTerm.'%';
+        }
+
+        if ($searchTerm != "") {
+            $sql .= " AND last_name LIKE :searchTerm";
+            $binds['last_name'] = '%'.$searchTerm.'%';
+        }
+            
+        if ($searchTerm != "") {
+            $sql .= " AND married = :searchTerm";
+            $binds['married'] = $searchTerm;
+        }
 
         if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
