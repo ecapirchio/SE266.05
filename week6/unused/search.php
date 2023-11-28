@@ -13,10 +13,10 @@ include(__DIR__ . '/model_patients.php');
 
 // Handle search
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $searchTerm = $_POST['searchTerm'];
+    $searchTerm = $_POST['searchButton'];
     
     // Query the database based on first name, last name, or marital status
-    $patients = searchPatients($searchTerm);
+    $patients = searchPatients($first_name, $last_name, $married);
 
 } else {
     // Load all patients initially
@@ -35,10 +35,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     <!-- Search Form -->
     <form method="post" action="search.php">
-        <label for="searchTerm">Search:</label>
-        <input type="text" name="searchTerm" />
-        <input type="submit" value="Search" />
+        <label>First Name:</label>
+        <input type="text" name="first_name" />
+
+        <label>Last Name:</label>
+        <input type="text" name="last_name" />
+
+        <label for="married">Married (yes/no):</label>
+        <select name="married" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        <input type="submit" name="searchButton" value="Search" />
     </form>
+
+
 
     <!-- Display search results or all patients -->
     <h3>Patients</h3>

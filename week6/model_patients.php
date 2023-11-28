@@ -61,40 +61,44 @@
         return ($results);
     }
 
-    function searchPatients($searchTerm)
+    function searchPatients($first_name, $last_name, $married)
     {
         global $db;
         $results = [];
         $binds = array();
 
         // Query the database for patients matching the search term
-        $sql = "SELECT id, first_name, last_name, married, birth_date FROM patients WHERE 
+        /*$sql = "SELECT id, first_name, last_name, married, birth_date FROM patients WHERE 
         first_name LIKE :searchTerm 
         OR last_name LIKE :searchTerm 
         OR married LIKE :searchTerm";
         $stmt = $db->prepare("SELECT id, first_name, last_name, married, birth_date FROM patients WHERE 
                             first_name LIKE :searchTerm 
                             OR last_name LIKE :searchTerm 
-                            OR married LIKE :searchTerm");
+                            OR married LIKE :searchTerm");*/
         
         $sql =  "SELECT * FROM  patients WHERE 0=0";
-        if ($searchTerm != "") {
+        if ($first_name != "") {
             $sql .= " AND first_name LIKE :first_name";
-            $binds['first_name'] = '%'.$searchTerm.'%';
+            $binds['first_name'] = '%'.$first_name.'%';
         }
 
-        if ($searchTerm != "") {
-            $sql .= " AND last_name LIKE :searchTerm";
-            $binds['last_name'] = '%'.$searchTerm.'%';
+        if ($last_name != "") {
+            $sql .= " AND last_name LIKE :last_name";
+            $binds['last_name'] = '%'.$last_name.'%';
         }
             
-        if ($searchTerm != "") {
-            $sql .= " AND married = :searchTerm";
-            $binds['married'] = $searchTerm;
+        if ($married != "") {
+            $sql .= " AND married = :married";
+            $binds['married'] = $married;
         }
 
+        $stmt = $db->prepare($sql);
         if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        else{
+            $results = "No results";
         }
 
         return $results;
