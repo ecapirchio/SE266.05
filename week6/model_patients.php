@@ -61,4 +61,25 @@
         return ($results);
     }
 
+    function searchPatients($searchTerm)
+    {
+        global $db;
+        $results = [];
+
+        // Query the database for patients matching the search term
+        $stmt = $db->prepare("SELECT id, first_name, last_name, married, birth_date FROM patients WHERE 
+                            first_name LIKE :searchTerm 
+                            OR last_name LIKE :searchTerm 
+                            OR married LIKE :searchTerm");
+        $binds = array(
+            ":searchTerm" => "%$searchTerm%"
+        );
+
+        if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        return $results;
+    }
+
 ?>
