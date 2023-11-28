@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $passkey = $_POST['passkey'];
 
     // Perform authentication (you should replace this with your authentication logic)
-    if (authenticateUser($username, $passkey)) {
+    if (authenticateUser($username, $passkey)==1) {
         // Authentication successful
         $_SESSION['username'] = $username;
         header("Location: viewPatients.php");
@@ -48,6 +48,23 @@ function authenticateUser($username, $passkey) {
     // Your authentication logic here (e.g., check against a database)
     // Return true if authentication succeeds, false otherwise
     // Remember to encrypt and compare passkeys securely
-    return true;
+
+    global $db;
+    $results = [];
+    $stmt = $db->prepare("SELECT * FROM users WHERE 0=0 AND username LIKE :username AND passkey LIKE :passkey");
+
+    $binds = array(
+        ":username" => $username,
+        ":passkey" => sha1($passkey)
+    );
+
+    if($stmt->execute($binds) && $stmt->rowCount() > 0) {
+        $results = '1';
+    }
+    else{
+        $results = '2';
+    }
+
+    return $results;
 }
 ?>
