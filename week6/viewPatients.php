@@ -66,11 +66,12 @@ $patients = searchPatients($first_name, $last_name, $married);
         <input type="text" name="last_name" />
 
         <label for="married">Married (yes/no):</label>
-        <select name="married" required>
+        <select name="married">
+            <option value=""></option>
             <option value=1>Yes</option>
             <option value=0>No</option>
         </select>
-        <input type="submit" name="searchButton" value="Search" />
+        <input type="submit" name="searchButton" value="Search" /><br><br>
     </form>
 <table>
     <thead>

@@ -11,11 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (authenticateUser($username, $passkey)) {
         // Authentication successful
         $_SESSION['username'] = $username;
-        header("Location: search.php");
+        header("Location: viewPatients.php");
         exit();
     } else {
         // Authentication failed
-        $error_message = "Invalid username or passkey";
+        $error_message = "Invalid username or password";
     }
 }
 
