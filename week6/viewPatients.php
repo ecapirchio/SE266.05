@@ -106,5 +106,7 @@ $patients = searchPatients($first_name, $last_name, $married);
 </table>
 <br>
 <a href="patientForm.php">Add Patient</a>
+<?php echo "|   ";?>
+<a href="viewPatients.php">Reset</a>
 </body>
 </html>
