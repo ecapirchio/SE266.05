@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (authenticateUser($username, $passkey)==1) {
         // Authentication successful
         $_SESSION['username'] = $username;
-        header("Location: viewSuperheros.php");
+        header("Location: viewSuperheroes.php");
         exit();
     } else {
         // Authentication failed

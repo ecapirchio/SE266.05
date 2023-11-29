@@ -4,6 +4,6 @@ CREATE TABLE IF NOT EXISTS superheroes (
         superhero_name VARCHAR(50) DEFAULT NULL,
         secret_identity VARCHAR(50) DEFAULT NULL,
         universe VARCHAR(50) DEFAULT NULL,
-        main_power VARCHAR(50) DEFAULT NULL;
+        main_power VARCHAR(50) DEFAULT NULL
         
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;
