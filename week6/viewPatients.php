@@ -108,5 +108,7 @@ $patients = searchPatients($first_name, $last_name, $married);
 <a href="patientForm.php">Add Patient</a>
 <?php echo "|   ";?>
 <a href="viewPatients.php">Reset</a>
+<?php echo "|   ";?>
+<a href="logoff.php">Logoff</a>
 </body>
 </html>
