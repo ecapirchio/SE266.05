@@ -1,0 +1,9 @@
+
+CREATE TABLE IF NOT EXISTS superheroes (
+	id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+        superhero_name VARCHAR(50) DEFAULT NULL,
+        secret_identity VARCHAR(50) DEFAULT NULL,
+        universe VARCHAR(50) DEFAULT NULL,
+        main_power VARCHAR(50) DEFAULT NULL;
+        
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;
