@@ -16,10 +16,7 @@
 <li><a href="../week4/patientDetails.php">Week 4</a></li>
 <li><a href="../week5/teams/index.php">Week 5</a></li>
 <li><a href="../week6/login.php">Week 6</a></li>
-<li><a href="../week7/index.php">Week 7</a></li>
-<li><a href="../week8/index.php">Week 8</a></li>
-<li><a href="../week9/index.php">Week 9</a></li>
-<li><a href="../week10/index.php">Week 10</a></li>
+<li><a href="../finalProject/login.php">Final Project</a></li>
 </ul>
 
 <?php
