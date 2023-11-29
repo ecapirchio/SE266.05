@@ -51,7 +51,7 @@ function authenticateUser($username, $passkey) {
 
     global $db;
     $results = [];
-    $stmt = $db->prepare("SELECT * FROM users WHERE 0=0 AND username LIKE :username AND passkey LIKE :passkey");
+    $stmt = $db->prepare("SELECT * FROM superheroUsers WHERE 0=0 AND username LIKE :username AND passkey LIKE :passkey");
 
     $binds = array(
         ":username" => $username,
