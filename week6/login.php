@@ -43,11 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </html>
 
 <?php
-// Replace this function with your actual authentication logic
 function authenticateUser($username, $passkey) {
-    // Your authentication logic here (e.g., check against a database)
-    // Return true if authentication succeeds, false otherwise
-    // Remember to encrypt and compare passkeys securely
 
     global $db;
     $results = [];
