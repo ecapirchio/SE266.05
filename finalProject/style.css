@@ -1,5 +1,3 @@
-/* Combined Styles */
-
 body {
     background-color: blue;
     color: white;
@@ -28,19 +26,13 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-/* Unique Styles from style.css */
-
 h2 {
     text-align: center;
 }
 
-/* Unique Styles from style1.css */
-
 h1 {
     text-align: center;
 }
-
-/* Unique Styles from style2.css */
 
 table {
     width: 100%;
