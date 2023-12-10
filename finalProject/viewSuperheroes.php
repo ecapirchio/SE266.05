@@ -15,22 +15,22 @@ else {
     $superheroes = getSuperheroes();
 }
 
-/*if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['delete'])) {
         $id = $_POST['delete'];
-        $result = deletePatient($id);
+        $result = deleteSuperhero($id);
 
         if ($result === 'Data Deleted') {
-            header("Location: viewPatients.php");
+            header("Location: viewSuperheroes.php");
             exit();
         }
     }
-}*/
+}
 
-if(isset($_POST['deleteSuperhero'])){
+/*if(isset($_POST['deleteSuperhero'])){
     $id = filter_input(INPUT_POST, 'id');
     deleteSuperhero($id);
-}
+}*/
 
 if (isset($_POST['searchButton'])) {
     $superhero_name = filter_input(INPUT_POST, 'superhero_name');

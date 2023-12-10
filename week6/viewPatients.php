@@ -15,7 +15,7 @@ else {
     $patients = getPatients();
 }
 
-/*if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['delete'])) {
         $id = $_POST['delete'];
         $result = deletePatient($id);
@@ -25,12 +25,12 @@ else {
             exit();
         }
     }
-}*/
+}
 
-if(isset($_POST['deletePatient'])){
+/*if(isset($_POST['deletePatient'])){
     $id = filter_input(INPUT_POST, 'id');
     deletePatient($id);
-}
+}*/
 
 if (isset($_POST['searchButton'])) {
     $first_name = filter_input(INPUT_POST, 'first_name');
