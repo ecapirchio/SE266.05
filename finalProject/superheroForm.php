@@ -2,15 +2,6 @@
 
     include (__DIR__ . '/model_superheroes.php');
 
-    // Check if the user is logged in
-    if (!isset($_SESSION['username'])) {
-        header("Location: login.php");
-        exit();
-    }
-    else {
-        // Load all patients initially
-        $superheroes = getSuperheroes();
-    }
 
     $error = 0; #setting variables
     $errormsg = "";
