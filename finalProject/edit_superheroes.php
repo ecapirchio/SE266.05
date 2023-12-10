@@ -9,6 +9,17 @@
 <body>
 
 <?php
+
+// Check if the user is logged in
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+else {
+    // Load all patients initially
+    $superheroes = getSuperheroes();
+}
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -96,9 +107,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div>
             <input type="submit" name="updateButton" id="submit">
         </div>
+
+        <br><br>
+        <a href="viewSuperheroes.php"><- Back</a>
     </div>
 
 </form>
-
 </body>
 </html>
