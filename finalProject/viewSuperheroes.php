@@ -58,10 +58,12 @@ $superheroes = searchSuperheroes($superhero_name, $secret_identity, $universe, $
 </head>
 
 <body>
-<h2>Welcome, <?php echo $_SESSION['username']; ?>!</h2>
+<h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
     
     <!-- Search Form -->
     <form method="post">
+        <h3>Search Superheroes</h3>
+
         <label>Superhero Name:</label>
         <input type="text" name="superhero_name" />
 
