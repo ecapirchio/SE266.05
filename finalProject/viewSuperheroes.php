@@ -54,6 +54,7 @@ $superheroes = searchSuperheroes($superhero_name, $secret_identity, $universe, $
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Final Project</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>

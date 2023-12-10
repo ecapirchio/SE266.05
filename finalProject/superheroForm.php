@@ -33,6 +33,7 @@
     <title>Superhero Intake Form</title>
     <h1>Superhero Intake Form</h1>
     <form method="post" action="superheroForm.php">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <form method="post"> <!-- All inputs for patient -->

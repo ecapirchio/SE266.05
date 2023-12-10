@@ -25,10 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="style.css">
     <title>Login</title>
 </head>
 <body>
     <h2>Login</h2>
+
     <?php if(isset($error_message)) { echo "<p>$error_message</p>"; } ?>
     <form method="post" action="">
         <label for="username">Username:</label>
