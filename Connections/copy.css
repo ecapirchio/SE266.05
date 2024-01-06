@@ -1,0 +1,74 @@
+#game {
+    text-align: center;
+    margin: 20px;
+}
+
+#top-text {
+    margin-bottom: 20px;
+}
+
+#game prompt-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#board {
+    display: flex;
+    flex-direction: column;
+}
+
+#board > div {
+    display: flex;
+}
+
+.item {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+}
+
+#attempts-remaining-text {
+    display: flex;
+    margin-top: 20px;
+}
+
+#text-label-attempts-remaining {
+    margin-right: 10px;
+}
+
+.bubble {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.bubble.lost {
+    background-color: #ff6666; /* Red color for lost attempts */
+}
+
+#tool-buttons {
+    margin-top: 20px;
+}
+
+#tool-buttons span {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+}
+
+#tool-buttons span.inactive {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.item.selected-item {
+    background-color: #66cdaa; /* Change the background color for selected items */
+    color: #fff; /* Change the text color for selected items */
+    /* Add any additional styling for selected items here */
+}

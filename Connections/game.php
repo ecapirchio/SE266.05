@@ -33,6 +33,15 @@
             <div class="box" onclick="changeColor(this)">Three</div>
             <div class="box" onclick="changeColor(this)">Four</div>
         </div>
+        <div id="tool-buttons">
+            <span id="shuffle-button">Shuffle</span>
+            <span id="deselect-all-button">Deselect All</span>
+            <span id="submit-button" class="inactive">Submit</span>
+        </div>
+        <div id="results-buttons">
+            <span id="results-button">View Results</span>
+        </div>
+        <div id="snackbar"></div>
         <button onclick="handleEnter()">Enter</button>
     </div>
     <script src="game.js"></script>

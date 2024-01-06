@@ -1,5 +1,5 @@
 function startGame() {
 
-    window.location.href = "game.php";
+    window.location.href = "copy.php";
 
 }
