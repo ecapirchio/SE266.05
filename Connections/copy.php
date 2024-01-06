@@ -147,7 +147,32 @@
     
                     if (correctConnection) {
                         alert('You matched ' + connection + '!');
-                        break;
+
+                        // Deselect all items
+                        items.forEach(function (item) {
+                            item.classList.remove("selected");
+                            item.classList.remove("selected-item");
+                        });
+
+                        // Hide the correct connection items
+                        var boardItems = document.querySelectorAll('.item');
+                        boardItems.forEach(function (boardItem) {
+                            var boardItemText = boardItem.textContent.trim().toUpperCase();
+                            if (answerKey[connection].includes(boardItemText)) {
+                                boardItem.style.display = 'none';
+                            }
+                        });
+
+                        // Check if all board items are gone
+                        var remainingItems = document.querySelectorAll('.item:not([style*="display: none"])');
+                        if (remainingItems.length === 0) {
+                            // If all items are gone, navigate to the win.php page
+                            window.location.href = 'win.php';
+                        }
+
+                        // Deactivate the submit button
+                        submitButton.classList.add("inactive");
+
                     }
                 }
             }
